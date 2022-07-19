@@ -3,8 +3,7 @@
 ## [Spring.io - Creating Asynchronous Methods](https://spring.io/guides/gs/async-method/)
 ### - Spring의 Asynchronous Method에 대한 학습</br>
 약간의 번역을 해두었으나 자유롭게 번역하였기에 원문도 함께 기록했습니다.</br>
-한글의 경우 참고만 해주시거나 자유롭게 피드백해주시면 감사합니다!</br>
-(번외) 표시가 된 주석의 경우 해당 문서와 무관하거나 차이가 발생하는 코드입니다.</br></br>
+한글의 경우 참고만 해주시거나 자유롭게 피드백해주시면 감사합니다!</br></br>
 
 ### - 이 코드에 담긴 내용
 You will build a lookup service that queries GitHub user information and retrieves data through GitHub’s API.</br>
@@ -21,13 +20,25 @@ CompletableFuture는 여러 비동기 연산을 쉽게 파이프라인하고 단
 참고</br>
 [Guide To CompletableFuture - Baeldung](https://www.baeldung.com/java-completablefuture) - 추가 학습 예정</br>
 [Class CompletableFuture\<T\> - Oracle](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html)</br>
-[Class SimpleAsyncTaskExecutor](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html)</br>
+[Class SimpleAsyncTaskExecutor](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html)</br></br>
 
 ### 사용한 Dependencies
 - Spring Web
-- Lombok
+- Lombok</br></br>
 
-## 전체 개요
+## 개요
+### 1. /data/User.java
+- GitHub Api를 통해 검색된 사용자 정보를 저장하기 위해 정의한 클래스입니다.
+
+### 2. /service/GitHubLookupService.java
+- GitHub Api를 호출하는 method를 CompletableFuture와 @Async를 통해 구현합니다.
+
+### 3. /AsyncPracticeApplication.java
+- @Async를 사용하기 위해 필요한 것들을 설정합니다.
+
+### 4. /AppRunner.java
+- 1~3. 을 통해 구현한 것들을 테스트 해보는 코드입니다.
+- 2.에서 @Async를 사용할 때의 유의사항에 대한 Case를 함께 추가했습니다.
 
 
-### 1. 
+
