@@ -1,11 +1,11 @@
 # Spring Async Method Practice.
 
 ## [Spring.io - Creating Asynchronous Methods](https://spring.io/guides/gs/async-method/)
-### - Spring의 Asynchronous Method에 대한 학습</br>
+### Spring의 Asynchronous Method에 대한 학습
 약간의 번역을 해두었으나 자유롭게 번역하였기에 원문도 함께 기록했습니다.</br>
 한글의 경우 참고만 해주시거나 자유롭게 피드백해주시면 감사합니다!</br></br>
 
-### - 개요
+### 개요
 You will build a lookup service that queries GitHub user information and retrieves data through GitHub’s API.</br>
 One approach to scaling services is to run expensive jobs in the background and wait for the results by using Java’s CompletableFuture interface.</br>
 Java’s CompletableFuture is an evolution from the regular Future.</br>
