@@ -44,6 +44,30 @@ public class AppRunner implements CommandLineRunner {
             log.info("--> " + page.get());
         }
 
+        log.info("-------------------------------------------------------------");
+        log.info("---------------------self invoke-----------------------------");
+        long start2 = System.currentTimeMillis();
+
+        // Kick of multiple, asynchronous lookups
+        List<CompletableFuture<User>> pages2 = new ArrayList<>();
+        for (int i = 0; i < 2; i++) {
+            pages2.add(gitHubLookupService.selfInvokeFindUser("PivotalSoftware"));
+            pages2.add(gitHubLookupService.selfInvokeFindUser("CloudFoundry"));
+            pages2.add(gitHubLookupService.selfInvokeFindUser("Spring-Projects"));
+            pages2.add(gitHubLookupService.selfInvokeFindUser("limjae"));
+        }
+
+        // Wait until they are all done
+        CompletableFuture.allOf(pages2.toArray(new CompletableFuture[0])).join();
+
+
+        // Print results, including elapsed time
+        log.info("Elapsed time: " + (System.currentTimeMillis() - start2));
+        for(CompletableFuture<User> page : pages2)
+        {
+            log.info("--> " + page.get());
+        }
+
     }
 
 }

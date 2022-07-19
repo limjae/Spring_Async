@@ -42,9 +42,16 @@ public class GitHubLookupService {
         Thread.sleep(1000L);
         return CompletableFuture.completedFuture(results);
     }
+
+    public CompletableFuture<User> selfInvokeFindUser(String user) throws InterruptedException {
+        return findUser(user);
+    }
+
+
+
 }
 // 주의사항!!
-// self-invoke하거나 local instance로 GitHubLookupService class로 생성하면 비동기로 처리가 안됩니다. ComponentScan의 대상이 되어야합니다.
-// 또한 method가 public이여야합니다.(추가)
+// self-invoke하거나 local instance로 GitHubLookupService class로 생성하면 비동기로 처리가 안됩니다. ComponentScan의 대상이 되어야합니다. method가 public이여야 합니다.
 // Creating a local instance of the GitHubLookupService class does NOT allow the findUser method to run asynchronously.
 // It must be created inside a @Configuration class or picked up by @ComponentScan.
+// 원인 : https://dzone.com/articles/effective-advice-on-spring-async-part-1
