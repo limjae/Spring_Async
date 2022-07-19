@@ -31,7 +31,7 @@ CompletableFuture는 여러 비동기 연산을 쉽게 파이프라인하고 단
 - GitHub Api를 통해 검색된 사용자 정보를 저장하기 위해 정의한 클래스입니다.
 
 ### 2. /service/GitHubLookupService.java
-- GitHub Api를 호출하는 method를 CompletableFuture와 @Async를 통해 구현합니다.
+- GitHub Api를 호출하고 User를 반환하는 method를 CompletableFuture와 @Async를 통해 구현합니다.
 
 ### 3. /AsyncPracticeApplication.java
 - @Async를 사용하기 위해 필요한 것들을 설정합니다.
