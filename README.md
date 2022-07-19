@@ -26,7 +26,7 @@ CompletableFuture는 여러 비동기 연산을 쉽게 파이프라인하고 단
 - Spring Web
 - Lombok</br></br>
 
-## 
+## 목차
 ### 1. /data/User.java
 - GitHub Api를 통해 검색된 사용자 정보를 저장하기 위해 정의한 클래스입니다.
 
