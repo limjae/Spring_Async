@@ -1,17 +1,17 @@
 # Spring Async Method Practice.
 
 ## [Spring.io - Creating Asynchronous Methods](https://spring.io/guides/gs/async-method/)
-### - Spring의 Asynchronous Method에 대한 학습</br>
+### Spring의 Asynchronous Method에 대한 학습
 약간의 번역을 해두었으나 자유롭게 번역하였기에 원문도 함께 기록했습니다.</br>
 한글의 경우 참고만 해주시거나 자유롭게 피드백해주시면 감사합니다!</br></br>
 
-### - 이 코드에 담긴 내용
+### 개요
 You will build a lookup service that queries GitHub user information and retrieves data through GitHub’s API.</br>
 One approach to scaling services is to run expensive jobs in the background and wait for the results by using Java’s CompletableFuture interface.</br>
 Java’s CompletableFuture is an evolution from the regular Future.</br>
 It makes it easy to pipeline multiple asynchronous operations and merge them into a single asynchronous computation.</br>
 
-Github API를 사용하여 Github User 정보를 조회하고 데이터를 검색하는 lookup service 입니다.</br>
+Github API를 사용하여 Github User 정보를 조회하고 데이터를 검색하는 lookup service를 구현하고자 합니다.</br>
 이 서비스를 확장하기 위한 접근 방법으로 Java의 CompletableFuture 인터페이스를 사용해 백그라운드에서 해당 작업을 처리하고 기다리는 것입니다.</br>
 CompletableFuture는 기존 Future에서 발전한 클래스입니다.</br>
 CompletableFuture는 여러 비동기 연산을 쉽게 파이프라인하고 단일 비동기 연산에 병합할 수 있습니다.</br></br>
@@ -26,7 +26,7 @@ CompletableFuture는 여러 비동기 연산을 쉽게 파이프라인하고 단
 - Spring Web
 - Lombok</br></br>
 
-## 개요
+## 요약
 ### 1. /data/User.java
 - GitHub Api를 통해 검색된 사용자 정보를 저장하기 위해 정의한 클래스입니다.
 
