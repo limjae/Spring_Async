@@ -47,6 +47,10 @@ public class GitHubLookupService {
         return findUser(user);
     }
 
+    public void method1(){
+        System.out.println("GitHubLookupService.method1");
+    }
+
 
 
 }

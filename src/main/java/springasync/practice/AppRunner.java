@@ -3,6 +3,7 @@ package springasync.practice;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Component;
 import springasync.practice.data.User;
 import springasync.practice.service.GitHubLookupService;
@@ -21,6 +22,18 @@ public class AppRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
+        // See Proxy
+        GitHubLookupService gitHubLookupService2 = new GitHubLookupService(new RestTemplateBuilder());
+
+        System.out.println("gitHubLookupService = " + gitHubLookupService.getClass());
+        System.out.println("gitHubLookupService2 = " + gitHubLookupService2.getClass());
+
+//        Method method1 = gitHubLookupService.getClass().getMethod("method1");
+//        Method method2 = gitHubLookupService2.getClass().getMethod("method1");
+//        System.out.println("method1 = " + method1);
+//        System.out.println("method2 = " + method2);
+
         // Start the clock
         long start = System.currentTimeMillis();
 
